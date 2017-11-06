@@ -16,7 +16,7 @@
 
 % \usepackage[inline]{enumitem}
 
-\title{Scheduling of Synchronous Data Flow Models onto Scratchpad Memory-Based Embedded Processors}
+\title{Scheduling of Synchronous Data Flow Models onto Scratchpad Memory-Based Embedded Processors~\cite{che2013scheduling}}
 
 \date{\displaydate{defensedate}}
 \author{%
@@ -158,7 +158,7 @@
 \end{frame}
 
 \begin{frame}{Main Algorithm}
-  Evolve from Minimum Buffer Schedule toward Minimum Actor Switches. % TODO why
+  Evolve from Minimum Buffer Schedule~\cite{jantsch2004modeling} toward Minimum Actor Switches.
   \begin{center}
     \hspace*{-0.1\textwidth}
     \includegraphics[width=1.2\textwidth]{algo2}
@@ -174,10 +174,8 @@
 
 \begin{frame}{Data Overlay}
   Instead of keeping all tokens in the SPM, put some in the main memory until it is useful.
-  \begin{itemize}
-    \item Frees space for code.
-  \end{itemize}
-  % TODO re-read the data overlay part
+
+  Frees space for code, thus less code overlay.
 \end{frame}
 
 
@@ -185,6 +183,8 @@
 
 \begin{frame}{State-of-the-art comparison}
   Comparison 3-stage Integer Linear Program (Minimum Buffer Scheduling).
+
+  300 times faster; better results.
   \begin{center}
     \hspace*{-0.05\textwidth}
     \includegraphics[width=1.1\textwidth]{fig10}
@@ -220,17 +220,26 @@
 \begin{frame}{Conclusion}
   \begin{itemize}
     \item Thoughtful evaluation;
-    \item complexity in $O(n^5)$, no comparison of runtime with the state-of-the-art.
+    \item correct results;
+    \item fast.
   \end{itemize}
 \end{frame}
 
 \appendix
 
 \begin{frame}{Code Overlay Calculation}
+  Symbolic execution
   \begin{center}
     \hspace*{-0.1\textwidth}
     \includegraphics[width=1.2\textwidth]{algo1}
   \end{center}
+\end{frame}
+
+\begin{frame}[allowframebreaks]{References}
+
+  \bibliography{biblio}
+  \bibliographystyle{abbrv}
+
 \end{frame}
 
 \end{document}
